@@ -1,0 +1,24 @@
+{
+  "name": "beeble-test-api",
+  "version": "1.0.0",
+  "description": "NodeJS Based RestAPI for beeble-test",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "errorhandler": "^1.5.0",
+    "express": "^4.8.7",
+    "express-jwt": "^5.3.1",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.1.1",
+    "mongoose-autopopulate": "^0.9.1",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "nodemon": "^1.18.10",
+    "uniqid": "^5.0.3"
+  }
+}
