@@ -15,18 +15,21 @@ module.exports = function (router) {
     });
 
     // add new item
-    router.post(endpoint, upload.array('images', 12), function (req, res) {
-        let image = req.files.path
-        console.log(image)
-
+    router.post(endpoint, upload.single('image'), function (req, res) {
+        let image = req.file.path
         let data = req.body
         data.image = image
 
         let Item = new ItemModel(data)
         Item.save(function (err, docs) {
-            res.status(200).json(docs)
+            res.status(200).json({success: true, item: docs})
         })
     });
 
     //delete an item using its id
+    router.delete(`${endpoint}:id`, function (req, res) {
+        ItemModel.findByIdAndRemove(req.params.id, (error, docs) => {
+            res.status(200).json({success: true, docs})
+        })
+    });
 };
